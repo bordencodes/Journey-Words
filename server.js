@@ -57,6 +57,12 @@ app.delete('/phrase/:id', async (req, res) => {
   res.json(deletedPhrase)
 })
 
+// delete a collection
+app.delete('/collection/:id', async (req, res) => {
+  let deletedCollection = await Collection.findByIdAndDelete(req.params.id)
+  res.json(deletedCollection)
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
