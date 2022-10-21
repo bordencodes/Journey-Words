@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   res.send('This is root!')
 })
 
-//Phrase routes
+//Phrase and Collection routes
 
 // read all phrases
 app.get('/phrases', async (req, res) => {
