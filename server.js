@@ -27,6 +27,12 @@ app.post('/phrases', async (req, res) => {
   res.json(createPhrase)
 })
 
+// add/create collection
+app.post('collection', async (req, res) => {
+  let createCollection = await Collection.create(req.body)
+  res.json(createCollection)
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
