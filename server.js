@@ -33,6 +33,13 @@ app.post('collection', async (req, res) => {
   res.json(createCollection)
 })
 
+//update on phrase
+app.put('phrase/:id', async (req, res) => {
+  let updatePhrase = await Phrase.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  })
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
