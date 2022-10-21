@@ -33,11 +33,22 @@ app.post('collection', async (req, res) => {
   res.json(createCollection)
 })
 
-//update on phrase
+//update a phrase
 app.put('phrase/:id', async (req, res) => {
   let updatePhrase = await Phrase.findByIdAndUpdate(req.params.id, req.body, {
     new: true
   })
+})
+
+// update a collection
+app.put('collection/:id', async (req, res) => {
+  let updateCollection = await Collection.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true
+    }
+  )
 })
 
 app.listen(PORT, () => {
