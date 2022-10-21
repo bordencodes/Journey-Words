@@ -33,11 +33,12 @@ app.post('/collection', async (req, res) => {
   res.json(createdCollection)
 })
 
-//update a phrase
+// update a phrase
 app.put('/phrase/:id', async (req, res) => {
   let updatedPhrase = await Phrase.findByIdAndUpdate(req.params.id, req.body, {
     new: true
   })
+  res.json(updatedPhrase)
 })
 
 // update a collection
@@ -49,6 +50,7 @@ app.put('/collection/:id', async (req, res) => {
       new: true
     }
   )
+  res.json(updatedCollection)
 })
 
 // delete a phrase
