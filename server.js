@@ -13,6 +13,14 @@ app.get('/', (req, res) => {
   res.send('This is root!')
 })
 
+//Phrase routes
+
+// read all phrases
+app.get('/phrases', async (req, res) => {
+  let allPhrases = await Phrase.find({})
+  res.json(allPhrases)
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
