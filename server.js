@@ -24,13 +24,13 @@ app.get('/phrases', async (req, res) => {
 // create phrases
 app.post('/phrases', async (req, res) => {
   let createdPhrase = await Phrase.create(req.body)
-  res.json(createPhrase)
+  res.json(createdPhrase)
 })
 
 // add/create collection
 app.post('/collection', async (req, res) => {
   let createdCollection = await Collection.create(req.body)
-  res.json(createCollection)
+  res.json(createdCollection)
 })
 
 //update a phrase
