@@ -21,6 +21,12 @@ app.get('/phrases', async (req, res) => {
   res.json(allPhrases)
 })
 
+// create phrases
+app.post('/phrases', async (req, res) => {
+  let createPhrase = await Phrase.create(req.body)
+  res.json(createPhrase)
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
