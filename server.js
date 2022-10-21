@@ -28,13 +28,13 @@ app.post('/phrases', async (req, res) => {
 })
 
 // add/create collection
-app.post('/collection', async (req, res) => {
+app.post('/collections', async (req, res) => {
   let createdCollection = await Collection.create(req.body)
   res.json(createdCollection)
 })
 
 // update a phrase
-app.put('/phrase/:id', async (req, res) => {
+app.put('/phrases/:id', async (req, res) => {
   let updatedPhrase = await Phrase.findByIdAndUpdate(req.params.id, req.body, {
     new: true
   })
@@ -42,7 +42,7 @@ app.put('/phrase/:id', async (req, res) => {
 })
 
 // update a collection
-app.put('/collection/:id', async (req, res) => {
+app.put('/collections/:id', async (req, res) => {
   let updatedCollection = await Collection.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -54,13 +54,13 @@ app.put('/collection/:id', async (req, res) => {
 })
 
 // delete a phrase
-app.delete('/phrase/:id', async (req, res) => {
+app.delete('/phrases/:id', async (req, res) => {
   let deletedPhrase = await Phrase.findByIdAndDelete(req.params.id)
   res.json(deletedPhrase)
 })
 
 // delete a collection
-app.delete('/collection/:id', async (req, res) => {
+app.delete('/collections/:id', async (req, res) => {
   let deletedCollection = await Collection.findByIdAndDelete(req.params.id)
   res.json(deletedCollection)
 })
