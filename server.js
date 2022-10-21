@@ -23,32 +23,38 @@ app.get('/phrases', async (req, res) => {
 
 // create phrases
 app.post('/phrases', async (req, res) => {
-  let createPhrase = await Phrase.create(req.body)
+  let createdPhrase = await Phrase.create(req.body)
   res.json(createPhrase)
 })
 
 // add/create collection
-app.post('collection', async (req, res) => {
-  let createCollection = await Collection.create(req.body)
+app.post('/collection', async (req, res) => {
+  let createdCollection = await Collection.create(req.body)
   res.json(createCollection)
 })
 
 //update a phrase
-app.put('phrase/:id', async (req, res) => {
-  let updatePhrase = await Phrase.findByIdAndUpdate(req.params.id, req.body, {
+app.put('/phrase/:id', async (req, res) => {
+  let updatedPhrase = await Phrase.findByIdAndUpdate(req.params.id, req.body, {
     new: true
   })
 })
 
 // update a collection
-app.put('collection/:id', async (req, res) => {
-  let updateCollection = await Collection.findByIdAndUpdate(
+app.put('/collection/:id', async (req, res) => {
+  let updatedCollection = await Collection.findByIdAndUpdate(
     req.params.id,
     req.body,
     {
       new: true
     }
   )
+})
+
+// delete a phrase
+app.delete('/phrase/:id', async (req, res) => {
+  let deletedPhrase = await Phrase.findByIdAndDelete(req.params.id)
+  res.json(deletedPhrase)
 })
 
 app.listen(PORT, () => {
