@@ -40,7 +40,33 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Vocab Lists</h1>
+      <h1>All Vocab Lists</h1>
+      <div>
+        {/* <h2>{collection.title}</h2> */}
+        <h2>Collection Title</h2>
+      </div>
+      <h3>Add another collection:</h3>
+      <form>
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          // value={formState.title}
+          // onChange={hangleChange}
+        />
+        <label htmlFor="description">Description:</label>
+        <input
+          id="description"
+          // value={formState.description}
+          // onChange={handleChange}
+        />
+        <label htmlFor="phrase">Phrase:</label>
+        <input
+          type="phrase"
+          // value={formState.price}
+          // onChange={onChange}
+        />
+        <button type="submit">Add collection</button>
+      </form>
     </div>
   )
 }
