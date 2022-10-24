@@ -13,7 +13,8 @@ const main = async () => {
         'good morning',
         'good afternoon',
         'good evening',
-        'good night'
+        'good night',
+        'goodbye'
       ]
     },
     {
