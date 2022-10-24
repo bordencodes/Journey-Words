@@ -22,13 +22,18 @@ app.get('/phrases', async (req, res) => {
   res.json(allPhrases)
 })
 
+// read all collections
+app.get('/collections', async (req, res) => {
+  let allCollections = await Collection.find({})
+  res.json(allCollections)
+})
+
 // create phrases
 app.post('/phrases', async (req, res) => {
   let createdPhrase = await Phrase.create(req.body)
   res.json(createdPhrase)
 })
-
-// add/create collection
+// create collections
 app.post('/collections', async (req, res) => {
   let createdCollection = await Collection.create(req.body)
   res.json(createdCollection)
