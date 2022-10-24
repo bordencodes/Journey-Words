@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const PORT = process.env.PORT || 3001
 const db = require('./db')
+const routes = require('./routes')
 const { Phrase, Collection } = require('./models')
 
 const app = express()
@@ -64,6 +65,10 @@ app.delete('/collections/:id', async (req, res) => {
   let deletedCollection = await Collection.findByIdAndDelete(req.params.id)
   res.json(deletedCollection)
 })
+
+app.use('/api', routes)
+
+// db.on('error', cosole.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)

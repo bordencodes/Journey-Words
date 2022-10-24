@@ -40,10 +40,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>All Vocab Lists</h1>
+      <h1>Journey Words</h1>
       <div>
         {/* <h2>{collection.title}</h2> */}
-        <h2>Collection Title</h2>
+        <h2>Vocab Lists</h2>
       </div>
       <h3>Add another collection:</h3>
       <form>
@@ -51,7 +51,7 @@ function App() {
         <input
           id="title"
           // value={formState.title}
-          // onChange={hangleChange}
+          // onChange={handleChange}
         />
         <label htmlFor="description">Description:</label>
         <input
@@ -63,7 +63,7 @@ function App() {
         <input
           type="phrase"
           // value={formState.price}
-          // onChange={onChange}
+          // onChange={handleChange}
         />
         <button type="submit">Add collection</button>
       </form>
