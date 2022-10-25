@@ -43,7 +43,7 @@ function App() {
       <h1>Journey Words</h1>
       <div>
         {/* <h2>{collection.title}</h2> */}
-        <h2>Vocab Lists</h2>
+        <h2>Vocabulary Lists</h2>
       </div>
       <h3>Add another collection:</h3>
       <form>
