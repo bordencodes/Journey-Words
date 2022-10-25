@@ -3,7 +3,7 @@ import './App.css'
 // import axios from 'axios'
 // import { response } from 'express'
 
-function App() {
+const App = () => {
   // const [collections, updateCollections] = useState([])
   // const [formState, setFormState] = useState({
   //   title: '',
@@ -60,8 +60,10 @@ function App() {
           // onChange={handleChange}
         />
         <label htmlFor="phrase">Phrase:</label>
-        <input
+        <textarea
           type="phrase"
+          cols="30"
+          rows="10"
           // value={formState.price}
           // onChange={handleChange}
         />
