@@ -22,6 +22,18 @@ app.get('/phrases', async (req, res) => {
   res.json(allPhrases)
 })
 
+// read one phrase
+app.get('/phrases', async (req, res) => {
+  let findPhrase = await Phrase.findById(req.params.id).populate('collections')
+  res.json(findPhrase)
+})
+
+// read one collection
+app.get('/collections', async (req, res) => {
+  let findCollection = await Collection.findById(req.params.id)
+  res.json(findCollection)
+})
+
 // read all collections
 app.get('/collections', async (req, res) => {
   let allCollections = await Collection.find({})
