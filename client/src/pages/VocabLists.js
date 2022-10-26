@@ -17,10 +17,13 @@ const VocabLists = () => {
 
   return (
     <div className="App">
-      <h1>Journey Words</h1>
+      <h3>Complete Words and Phrases Listing</h3>
       {phrases.map((phrase) => (
         <section key={phrase.id}>
-          <div>{phrase.theme}</div>
+          {/* <div>{phrase.theme}</div> */}
+          <div>{phrase.phrase}</div>
+          {/* <div>{phrase.definition}</div>
+          <div>{phrase.example}</div> */}
         </section>
       ))}
     </div>
