@@ -11,7 +11,7 @@ const Home = () => {
     title: '',
     description: ''
   })
-  // const [theme, removeTheme] = useState()
+  const [remove, removeTheme] = useState('')
 
   useEffect(() => {
     const apiCall = async () => {
@@ -34,15 +34,17 @@ const Home = () => {
     let response = await axios.post('http://localhost:3001/collections', form)
   }
 
-  // const deleteList = async () => {
-  //   let response = await axios
-  //     .delete(`http://localhost:3001/themes/${id}`, theme)
-  //     }
+  const deleteList = async (e) => {
+    let response = await axios.delete(
+      `http://localhost:3001/collections/${remove.deleteList}`
+    )
+    console.log(response)
+  }
 
-  // const handleListChange = async (e) => {
-  //   removeTheme({ ...theme, [e.target.id]: e.target.value })
-  //   deleteList()
-  // }
+  const handleListChange = async (e) => {
+    removeTheme({ ...remove, [e.target.id]: e.target.value })
+    console.log(remove.deleteList)
+  }
 
   return (
     <div className="App">
@@ -67,11 +69,16 @@ const Home = () => {
         <button type="submit">Add to List</button>
       </form>
       <br />
-      {/* <form onSubmit={handleListChange}>
-        <label htmlFor="title">Select List Item: </label>
-        <input id="title" value={form.title} onChange={handleFormChange} />
-        <button type="submit">Remove List</button>
-      </form> */}
+      <label htmlFor="title">Select List Item: </label>
+      <select id="deleteList" onChange={handleListChange}>
+        <option></option>
+        {collections.map((collection) => (
+          <option value={collection._id}>{collection.title}</option>
+        ))}
+      </select>
+      <button type="submit" onClick={deleteList}>
+        Remove List
+      </button>
     </div>
   )
 }
