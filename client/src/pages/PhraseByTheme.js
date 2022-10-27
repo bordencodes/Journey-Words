@@ -1,32 +1,37 @@
-// import { useState, useEffect } from 'react'
-// import axios from 'axios'
-// import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { useNavigate, useParams } from 'react-router-dom'
 
-// const PhraseByTheme = () => {
-//   let navigate = useNavigate()
+const PhraseByTheme = () => {
+  let navigate = useNavigate()
 
-//   const [phraseTheme, updateCollections] = useState([])
+  const [phraseTheme, updateCollections] = useState([])
+  const { id } = useParams()
+  console.log(id)
 
-//   useEffect(() => {
-//     const apiCall = async () => {
-//       let response = await axios.get(
-//         "http://localhost:3001/collections"
-//       )
-//       updateCollections(response.data)
-//     }
-//     apiCall()
-//   }, [])
+  useEffect(() => {
+    const apiCall = async () => {
+      let response = await axios
+        .get(`http://localhost:3001/themes/${id}`)
+        .then((response) => {
+          updateCollections(response.data)
+        })
+    }
+    apiCall()
+  }, [])
 
-//   return (
-//     <div className="App">
-//       <h1>Journey Words</h1>
-//       {collections.map((collection) => (
-//         <section key={collection.id}>
-//           <div>{collection.title}</div>
-//         </section>
-//       ))}
-//     </div>
-//   )
-// }
+  return (
+    <div className="App">
+      {phraseTheme.map((theme) => (
+        <div>
+          <div>{theme.phrase}</div>
+          <div>Definition: {theme.definition}</div>
+          <div>example: {theme.example}</div>
+          <br />
+        </div>
+      ))}
+    </div>
+  )
+}
 
-// export default PhraseByTheme
+export default PhraseByTheme

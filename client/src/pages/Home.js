@@ -6,6 +6,7 @@ const Home = () => {
   let navigate = useNavigate()
 
   const [collections, updateCollections] = useState([])
+  const [themes, setThemes] = useState()
 
   useEffect(() => {
     const apiCall = async () => {
@@ -15,12 +16,18 @@ const Home = () => {
     apiCall()
   }, [])
 
+  const handleChange = async (e) => {
+    navigate(`/themes/${e.target.value}`)
+  }
+
   return (
     <div className="App">
       <h3>Select a List</h3>
       {collections.map((collection) => (
         <section key={collection.id}>
-          <div>{collection.title}</div>
+          <button id="themes" value={collection.title} onClick={handleChange}>
+            {collection.title}
+          </button>
         </section>
       ))}
       <form>
