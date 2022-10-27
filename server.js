@@ -90,8 +90,6 @@ app.delete('/collections/:id', async (req, res) => {
 
 app.use('/api', routes)
 
-// db.on('error', cosole.error.bind(console, 'MongoDB connection error:'))
-
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
