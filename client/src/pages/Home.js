@@ -11,7 +11,7 @@ const Home = () => {
     title: '',
     description: ''
   })
-  // const [theme, removeThemes] = useState()
+  // const [theme, removeTheme] = useState()
 
   useEffect(() => {
     const apiCall = async () => {
@@ -40,7 +40,8 @@ const Home = () => {
   //     }
 
   // const handleListChange = async (e) => {
-  //   updateForm({ ...theme, [e.target.id]: e.target.value })
+  //   removeTheme({ ...theme, [e.target.id]: e.target.value })
+  //   deleteList()
   // }
 
   return (
@@ -66,11 +67,11 @@ const Home = () => {
         <button type="submit">Add to List</button>
       </form>
       <br />
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleListChange}>
         <label htmlFor="title">Select List Item: </label>
         <input id="title" value={form.title} onChange={handleFormChange} />
         <button type="submit">Remove List</button>
-      </form>
+      </form> */}
     </div>
   )
 }
