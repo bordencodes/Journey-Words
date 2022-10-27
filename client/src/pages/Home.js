@@ -11,6 +11,7 @@ const Home = () => {
     title: '',
     description: ''
   })
+  // const [theme, removeThemes] = useState()
 
   useEffect(() => {
     const apiCall = async () => {
@@ -32,6 +33,15 @@ const Home = () => {
     e.preventDefault()
     let response = await axios.post('http://localhost:3001/collections', form)
   }
+
+  // const deleteList = async () => {
+  //   let response = await axios
+  //     .delete(`http://localhost:3001/themes/${id}`, theme)
+  //     }
+
+  // const handleListChange = async (e) => {
+  //   updateForm({ ...theme, [e.target.id]: e.target.value })
+  // }
 
   return (
     <div className="App">
