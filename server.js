@@ -16,11 +16,11 @@ app.get('/', (req, res) => {
 
 //Phrase and Collection routes
 
-// // read all phrases
-// app.get('/phrases', async (req, res) => {
-//   let allPhrases = await Phrase.find({})
-//   res.json(allPhrases)
-// })
+// read all phrases
+app.get('/phrases', async (req, res) => {
+  let allPhrases = await Phrase.find({})
+  res.json(allPhrases)
+})
 
 app.get('/themes/:id', async (req, res) => {
   let phrasesByTheme = await Phrase.find({ theme: [req.params.id] })
