@@ -7,6 +7,11 @@ const Home = () => {
 
   const [collections, updateCollections] = useState([])
   const [themes, setThemes] = useState()
+  const [form, updateForm] = useState({
+    title: '',
+    description: '',
+    phrases: []
+  })
 
   useEffect(() => {
     const apiCall = async () => {
@@ -46,7 +51,7 @@ const Home = () => {
         <label htmlFor="phrase">Phrase:</label>
         <input
           type="phrase"
-          // value={formState.price}
+          // value={formState.phrase}
           // onChange={handleChange}
         />
         <button type="submit">Add to List</button>
