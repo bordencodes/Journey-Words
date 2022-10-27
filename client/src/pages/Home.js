@@ -43,23 +43,23 @@ const Home = () => {
           </button>
         </section>
       ))}
+      <br />
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">Title: </label>
         <input id="title" value={form.title} onChange={handleFormChange} />
-        <label htmlFor="description">Description:</label>
+        <label htmlFor="description"> Description: </label>
         <input
           id="description"
           value={form.description}
           onChange={handleFormChange}
         />
-        <label htmlFor="phrase">Phrase:</label>
-        <input
-          id="phrases"
-          type="phrase"
-          value={form.phrase}
-          onChange={handleFormChange}
-        />
         <button type="submit">Add to List</button>
+      </form>
+      <br />
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="title">Select List Item: </label>
+        <input id="title" value={form.title} onChange={handleFormChange} />
+        <button type="submit">Remove List</button>
       </form>
     </div>
   )

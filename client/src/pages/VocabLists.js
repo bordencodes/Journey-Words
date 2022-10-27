@@ -20,12 +20,15 @@ const VocabLists = () => {
       <h3>Complete Words and Phrases Listing</h3>
       {phrases.map((phrase) => (
         <section key={phrase.id}>
-          {/* <div>{phrase.theme}</div> */}
           <div>{phrase.phrase}</div>
-          {/* <div>{phrase.definition}</div>
-          <div>{phrase.example}</div> */}
         </section>
       ))}
+      {/* <br />
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="phrase">Enter Phrase Here: </label>
+        <input id="phrase" value={form.phrase} onChange={handleFormChange} />
+        <button type="submit">Remove Phrase</button>
+      </form> */}
     </div>
   )
 }
