@@ -9,8 +9,7 @@ const Home = () => {
   const [themes, setThemes] = useState()
   const [form, updateForm] = useState({
     title: '',
-    description: '',
-    phrases: []
+    description: ''
   })
 
   useEffect(() => {
@@ -25,6 +24,15 @@ const Home = () => {
     navigate(`/themes/${e.target.value}`)
   }
 
+  const handleFormChange = async (e) => {
+    updateForm({ ...form, [e.target.id]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    let response = await axios.post('http://localhost:3001/collections', form)
+  }
+
   return (
     <div className="App">
       <h3>Select a List</h3>
@@ -35,24 +43,21 @@ const Home = () => {
           </button>
         </section>
       ))}
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
-        <input
-          id="title"
-          // value={formState.title}
-          // onChange={handleChange}
-        />
+        <input id="title" value={form.title} onChange={handleFormChange} />
         <label htmlFor="description">Description:</label>
         <input
           id="description"
-          // value={formState.description}
-          // onChange={handleChange}
+          value={form.description}
+          onChange={handleFormChange}
         />
         <label htmlFor="phrase">Phrase:</label>
         <input
+          id="phrases"
           type="phrase"
-          // value={formState.phrase}
-          // onChange={handleChange}
+          value={form.phrase}
+          onChange={handleFormChange}
         />
         <button type="submit">Add to List</button>
       </form>
