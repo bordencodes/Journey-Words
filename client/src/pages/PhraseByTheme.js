@@ -22,14 +22,16 @@ const PhraseByTheme = () => {
 
   return (
     <div className="App">
-      {phraseTheme.map((theme) => (
-        <div>
-          <div>{theme.phrase}</div>
-          <div>Definition: {theme.definition}</div>
-          <div>example: {theme.example}</div>
-          <br />
-        </div>
-      ))}
+      <div className="phraseWrapper">
+        {phraseTheme.map((theme) => (
+          <div className="themesContainer">
+            <div className="topWord">{theme.phrase}</div>
+            <div>Definition: {theme.definition}</div>
+            <div>example: {theme.example}</div>
+            <br />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

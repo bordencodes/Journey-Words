@@ -6,19 +6,24 @@ const VocabLists = () => {
   let navigate = useNavigate()
 
   const [phrases, updatePhrases] = useState([])
-  const [changePhrase, setPhrase] = useState('')
+  const [changePhrase, setPhrase] = useState({
+    checkPhrase: ''
+  })
   const [input, setInput] = useState('')
 
+  const apiCall = async () => {
+    let response = await axios.get('http://localhost:3001/phrases')
+    updatePhrases(response.data)
+  }
+
   useEffect(() => {
-    const apiCall = async () => {
-      let response = await axios.get('http://localhost:3001/phrases')
-      updatePhrases(response.data)
-    }
     apiCall()
   }, [])
 
   const handleChange = (e) => {
     setPhrase({ ...changePhrase, [e.target.id]: e.target.value })
+    console.log(e.target.id)
+    console.log(e.target.value)
   }
 
   const handleSubmit = async (e) => {
@@ -27,6 +32,14 @@ const VocabLists = () => {
       `http://localhost:3001/phrases/${changePhrase.checkPhrase}`,
       input
     )
+    apiCall()
+
+    setInput({
+      phrase: ''
+    })
+    setPhrase({
+      checkPhrase: ''
+    })
   }
 
   const inputChange = (e) => {
@@ -35,23 +48,35 @@ const VocabLists = () => {
 
   return (
     <div className="App">
-      <h3>Complete Words and Phrases Listing</h3>
-      {phrases.map((phrase) => (
-        <section key={phrase.id}>
-          <div>{phrase.phrase}</div>
-        </section>
-      ))}
+      <h3 className="allPhrases">All Phrases</h3>
+      <br />
+      <div className="phraseGrid">
+        {phrases.map((phrase) => (
+          <section key={phrase.id}>
+            <div>{phrase.phrase}</div>
+          </section>
+        ))}
+      </div>
       <br />
       <form onSubmit={handleSubmit}>
-        <label htmlFor="phrase">Enter Phrase Here: </label>
-        <input id="phrase" onChange={inputChange} />
-        <select id="checkPhrase" onChange={handleChange}>
+        <label className="updateLabel" htmlFor="phrase">
+          Enter Phrase Here:{' '}
+        </label>
+        <input id="phrase" onChange={inputChange} value={input.phrase} />
+        <select
+          value={changePhrase.checkPhrase}
+          className="updateDropdown"
+          id="checkPhrase"
+          onChange={handleChange}
+        >
           <option></option>
           {phrases.map((phrase) => (
             <option value={phrase._id}>{phrase.phrase}</option>
           ))}
         </select>
-        <button type="submit">Update Phrase</button>
+        <button className="listBtn" type="submit">
+          Update Phrase
+        </button>
       </form>
     </div>
   )
