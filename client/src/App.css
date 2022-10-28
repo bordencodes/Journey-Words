@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.navBar {
+  display: flex;
+}
+
+.navLinks {
+  text-decoration: none;
+}
+
+.theme-btns {
+  background-color: lightgray;
+  border: 2px solid black;
+  color: black;
+  padding: 15px 20px;
+  margin: 5px;
+  text-align: center;
+  font-size: 14px;
+  width: 100px;
+}

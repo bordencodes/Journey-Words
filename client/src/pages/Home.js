@@ -51,7 +51,12 @@ const Home = () => {
       <h3>Select a List</h3>
       {collections.map((collection) => (
         <section key={collection.id}>
-          <button id="themes" value={collection.title} onClick={handleChange}>
+          <button
+            className="theme-btns"
+            id="themes"
+            value={collection.title}
+            onClick={handleChange}
+          >
             {collection.title}
           </button>
         </section>

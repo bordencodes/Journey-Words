@@ -19,7 +19,6 @@ const VocabLists = () => {
 
   const handleChange = (e) => {
     setPhrase({ ...changePhrase, [e.target.id]: e.target.value })
-    console.log(changePhrase.checkPhrase)
   }
 
   const handleSubmit = async (e) => {
@@ -28,7 +27,6 @@ const VocabLists = () => {
       `http://localhost:3001/phrases/${changePhrase.checkPhrase}`,
       input
     )
-    console.log(response)
   }
 
   const inputChange = (e) => {
