@@ -27,9 +27,9 @@
 
 #### View: [Trello Board](https://trello.com/invite/b/jK3mdc3R/ATTIcd529b6961cc6a487d06bdd770c628e0BB8C2599/unit-2-planning-journeywords)
 
-#### View: [ERD](https://i.postimg.cc/rs3fXnxk/JW-ERD.png)
+#### View: [ERD](https://postimg.cc/rRG159fn)
 
-#### View: [Component Hierarchy Diagram](https://i.postimg.cc/76L9C8N4/JW-Hierarchy.png)
+#### View: [Component Hierarchy Diagram](https://postimg.cc/jWGP9193)
 
 ---
 
