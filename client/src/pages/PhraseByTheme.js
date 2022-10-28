@@ -6,18 +6,57 @@ const PhraseByTheme = () => {
   let navigate = useNavigate()
 
   const [phraseTheme, updateCollections] = useState([])
+  const [changeTheme, setTheme] = useState({
+    checkThemePhrase: ''
+  })
+
+  const [phraseInput, setPhraseInput] = useState('')
+
   const { id } = useParams()
 
+  const apiCall = async () => {
+    let response = await axios
+      .get(`http://localhost:3001/themes/${id}`)
+      .then((response) => {
+        updateCollections(response.data)
+      })
+  }
+
   useEffect(() => {
-    const apiCall = async () => {
-      let response = await axios
-        .get(`http://localhost:3001/themes/${id}`)
-        .then((response) => {
-          updateCollections(response.data)
-        })
-    }
     apiCall()
   }, [])
+
+  const handleChange = (e) => {
+    setTheme({ ...changeTheme, [e.target.id]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    console.log(id)
+    console.log(changeTheme.checkThemePhrase)
+    console.log(phraseInput)
+    e.preventDefault()
+    let response = await axios.put(
+      `http://localhost:3001/phrases/${changeTheme.checkThemePhrase}`,
+      phraseInput
+    )
+    // let response = await axios.put(
+    //   `http://localhost:3001/phrases/${changePhrase.checkPhrase}`,
+    //   input
+    // )
+    apiCall()
+
+    setPhraseInput({
+      themePhrase: ''
+    })
+
+    setTheme({
+      checkThemePhrase: ''
+    })
+  }
+
+  const inputChange = (e) => {
+    setPhraseInput({ ...phraseInput, [e.target.id]: e.target.value })
+  }
 
   return (
     <div className="App">
@@ -36,21 +75,25 @@ const PhraseByTheme = () => {
         ))}
       </div>
       <br />
-      <form>
-        <label>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="phrase">
           <strong>Enter Phrase Here:</strong>{' '}
         </label>
-        <input />
+        <input
+          id="phrase"
+          onChange={inputChange}
+          value={phraseInput.themePhrase}
+        />
         <select
-        // value={changePhrase.checkPhrase}
-        // className="updateDropdown"
-        // id="checkPhrase"
-        // onChange={handleChange}
+          value={changeTheme.checkThemePhrase}
+          className="updateDropdown"
+          id="checkThemePhrase"
+          onChange={handleChange}
         >
           <option></option>
-          {/* {phrases.map((phrase) => (
+          {phraseTheme.map((phrase) => (
             <option value={phrase._id}>{phrase.phrase}</option>
-          ))} */}
+          ))}
         </select>
         <button className="listBtn" type="submit">
           Update
