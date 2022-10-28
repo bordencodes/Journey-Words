@@ -10,7 +10,7 @@
 
 ### **_Description_**
 
-#### The JourneyWords App is a full-stack application that allows Spanish-learning users to create vocabulary lists that meet their personal and professional language goals. This app offers users existing vocabulary lists as well as the ability to create or update their own vocabulary lists. There will also be an option to delete words from the vocabulary lists.
+#### The JourneyWords App is a full-stack application that allows users to create vocabulary lists that meet their personal and professional language goals. This app is ideal for ESL learners and offers the users existing vocabulary lists as well as the ability to create or update their own vocabulary lists. There is also an option to delete words from the vocabulary lists.
 
 ---
 
@@ -26,14 +26,15 @@
 
 - Exisiting vocabulary lists
 
-  - English to Spanish
+  - Definitions
+  - Examples
 
 - Option to create vocabulary lists
 
-  - Create new list
-  - Add to existing list
+  - Create new list title
+  - Add to existing list of phrases
 
-- Ability to delete words or lists
+- Ability to delete lists
 
 ---
 
@@ -51,11 +52,11 @@
 
 ### **_Future Updates_**
 
-- [ ] Git project approval
-- [ ] Plan out project details
-- [ ] Update Trello
-- [ ] Create ERD
-- [ ] Create component hierarchy diagram
+- [x] Git project approval
+- [x] Create ERD
+- [x] Create component hierarchy diagram
+- [] Add photos
+- [] Add full CRUD to both models
 
 ---
 

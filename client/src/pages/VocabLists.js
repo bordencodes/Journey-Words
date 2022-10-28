@@ -22,8 +22,6 @@ const VocabLists = () => {
 
   const handleChange = (e) => {
     setPhrase({ ...changePhrase, [e.target.id]: e.target.value })
-    console.log(e.target.id)
-    console.log(e.target.value)
   }
 
   const handleSubmit = async (e) => {

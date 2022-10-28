@@ -7,7 +7,6 @@ const PhraseByTheme = () => {
 
   const [phraseTheme, updateCollections] = useState([])
   const { id } = useParams()
-  console.log(id)
 
   useEffect(() => {
     const apiCall = async () => {
@@ -26,12 +25,37 @@ const PhraseByTheme = () => {
         {phraseTheme.map((theme) => (
           <div className="themesContainer">
             <div className="topWord">{theme.phrase}</div>
-            <div>Definition: {theme.definition}</div>
-            <div>example: {theme.example}</div>
+            <div>
+              <strong>Definition:</strong> {theme.definition}
+            </div>
+            <div>
+              <strong>Example:</strong> {theme.example}
+            </div>
             <br />
           </div>
         ))}
       </div>
+      <br />
+      <form>
+        <label>
+          <strong>Enter Phrase Here:</strong>{' '}
+        </label>
+        <input />
+        <select
+        // value={changePhrase.checkPhrase}
+        // className="updateDropdown"
+        // id="checkPhrase"
+        // onChange={handleChange}
+        >
+          <option></option>
+          {/* {phrases.map((phrase) => (
+            <option value={phrase._id}>{phrase.phrase}</option>
+          ))} */}
+        </select>
+        <button className="listBtn" type="submit">
+          Update
+        </button>
+      </form>
     </div>
   )
 }
