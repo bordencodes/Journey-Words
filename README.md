@@ -26,6 +26,7 @@
 
 - Exisiting vocabulary lists
 
+  - Phrase
   - Definitions
   - Examples
 
@@ -38,13 +39,13 @@
 
 ---
 
-##### Screenshot 1
+##### Home
 
-![Pic1]()
+![Home Screen](https://i.postimg.cc/y8zwDx3z/JW-Home-screen-Shot.png)
 
-##### Screenshot 2
+##### Phrases
 
-![Pic2]()
+![All Phrases](https://i.postimg.cc/yNypgT4m/JW-All-Phrase-screen-Shot.png)
 
 #### View App on: [Heroku](https://www.heroku.com/)
 
@@ -52,9 +53,6 @@
 
 ### **_Future Updates_**
 
-- [x] Git project approval
-- [x] Create ERD
-- [x] Create component hierarchy diagram
 - [] Add photos
 - [] Add full CRUD to both models
 

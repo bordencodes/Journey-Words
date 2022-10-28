@@ -25,8 +25,6 @@ const VocabLists = () => {
   }
 
   const handleSubmit = async (e) => {
-    console.log(changePhrase.checkPhrase)
-    console.log(input)
     e.preventDefault()
     let response = await axios.put(
       `http://localhost:3001/phrases/${changePhrase.checkPhrase}`,

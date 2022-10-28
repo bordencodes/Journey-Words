@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
   res.send('This is root!')
 })
 
-//Phrase and Collection routes
 app.get('/phrases', async (req, res) => {
   let allPhrases = await Phrase.find({})
   res.json(allPhrases)

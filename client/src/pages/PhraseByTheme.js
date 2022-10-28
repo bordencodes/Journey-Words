@@ -31,18 +31,12 @@ const PhraseByTheme = () => {
   }
 
   const handleSubmit = async (e) => {
-    console.log(id)
-    console.log(changeTheme.checkThemePhrase)
-    console.log(phraseInput)
     e.preventDefault()
     let response = await axios.put(
       `http://localhost:3001/phrases/${changeTheme.checkThemePhrase}`,
       phraseInput
     )
-    // let response = await axios.put(
-    //   `http://localhost:3001/phrases/${changePhrase.checkPhrase}`,
-    //   input
-    // )
+
     apiCall()
 
     setPhraseInput({
