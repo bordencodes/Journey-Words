@@ -31,7 +31,7 @@
 
 ### **_Features_**
 
-- Exisiting vocabulary lists
+- Existing vocabulary lists
 
   - Phrase
   - Definitions
