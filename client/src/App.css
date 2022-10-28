@@ -69,6 +69,7 @@
   font-size: 14px;
   font-weight: bold;
   width: 250px;
+  cursor: pointer;
 }
 
 .formLabel{

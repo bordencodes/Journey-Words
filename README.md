@@ -60,6 +60,6 @@
 
 ### **_Credits_**
 
-##### [Source1](https://developer.mozilla.org/en-US/)
+##### [MDN](https://developer.mozilla.org/en-US/)
 
-##### [Source2](https://developer.mozilla.org/en-US/)
+##### Class Notes
