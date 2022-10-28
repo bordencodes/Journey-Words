@@ -14,6 +14,13 @@
 
 ---
 
+### **_Technologies Used_**
+
+- Mongoose/Express/React/Node
+- HTML, CSS, JavaScript
+
+---
+
 ### **_Getting Started_**
 
 #### I am utilizing Trello to begin the planning process and organize the key tasks to complete this project.
