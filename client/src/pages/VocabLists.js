@@ -56,6 +56,7 @@ const VocabLists = () => {
         ))}
       </div>
       <br />
+
       <form onSubmit={handleSubmit}>
         <label className="updateLabel" htmlFor="phrase">
           Enter Phrase Here:{' '}
@@ -76,6 +77,7 @@ const VocabLists = () => {
           Update Phrase
         </button>
       </form>
+      {/* DELETE PHRASE button here */}
     </div>
   )
 }
