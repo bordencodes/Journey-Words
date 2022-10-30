@@ -1,36 +1,15 @@
-// const mongoose = require('mongoose')
-// require('dotenv').config()
-
-// mongoose
-//   .connect(process.env.MONGODB_URI)
-//   .then(() => {
-//     console.log('Successfully connected to MonoDB')
-//   })
-//   .catch((e) => {
-//     console.log('Connection error', e.messages)
-//   })
-
-// const db = mongoose.connection
-
-// module.exports = db
-
 const mongoose = require('mongoose')
 require('dotenv').config()
 
-let dbUrl =
-  process.env.NODE_ENV === 'production'
-    ? process.env.MONGODB_URI
-    : 'mongodb://127.0.0.1:27017/vocabListsDatabase'
-
 mongoose
-  .connect(dbUrl)
+  .connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('Successfully connected to MongoDB!')
+    console.log('Successfully connected to MonoDB')
   })
   .catch((e) => {
-    console.error('Connection error', e.message)
+    console.log('Connection error', e.messages)
   })
-mongoose.set('debug', true)
+
 const db = mongoose.connection
 
 module.exports = db
