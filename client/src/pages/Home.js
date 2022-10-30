@@ -13,7 +13,6 @@ const Home = () => {
   const [remove, removeTheme] = useState('')
 
   const apiCall = async () => {
-    // let response = await axios.get('http://localhost:3001/collections')
     let response = await axios.get('/collections')
     updateCollections(response.data)
   }
@@ -32,7 +31,6 @@ const Home = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // let response = await axios.post('http://localhost:3001/collections', form)
     let response = await axios.post('/collections', form)
     apiCall()
     updateForm({
@@ -42,9 +40,6 @@ const Home = () => {
   }
 
   const deleteList = async (e) => {
-    // let response = await axios.delete(
-    //   `http://localhost:3001/collections/${remove.deleteList}`
-    // )
     let response = await axios.delete(`/collections/${remove.deleteList}`)
     apiCall()
   }

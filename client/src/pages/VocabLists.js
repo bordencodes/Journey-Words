@@ -11,7 +11,6 @@ const VocabLists = () => {
   const [remove, removePhrase] = useState('')
 
   const apiCall = async () => {
-    // let response = await axios.get('http://localhost:3001/phrases')
     let response = await axios.get('/phrases')
     updatePhrases(response.data)
   }
@@ -26,10 +25,6 @@ const VocabLists = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // let response = await axios.put(
-    //   `http://localhost:3001/phrases/${changePhrase.checkPhrase}`,
-    //   input
-    // )
     let response = await axios.put(
       `/phrases/${changePhrase.checkPhrase}`,
       input
@@ -49,9 +44,6 @@ const VocabLists = () => {
   }
 
   const deletePhrase = async (e) => {
-    // let response = await axios.delete(
-    //   `http://localhost:3001/phrases/${remove.phrase}`
-    // )
     let response = await axios.delete(`/phrases/${remove.phrase}`)
     apiCall()
   }

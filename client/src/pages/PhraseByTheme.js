@@ -22,11 +22,6 @@ const PhraseByTheme = () => {
   const { id } = useParams()
 
   const apiCall = async () => {
-    // let response = await axios
-    //   .get(`http://localhost:3001/themes/${id}`)
-    //   .then((response) => {
-    //     updateCollections(response.data)
-    //   })
     let response = await axios.get(`/themes/${id}`).then((response) => {
       updateCollections(response.data)
     })
@@ -42,7 +37,6 @@ const PhraseByTheme = () => {
 
   const handlePhraseSubmit = async (e) => {
     e.preventDefault()
-    // let response = await axios.post(`http://localhost:3001/phrases`, addPhrase)
     let response = await axios.post(`/phrases`, addPhrase)
 
     apiCall()
@@ -57,10 +51,6 @@ const PhraseByTheme = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // let response = await axios.put(
-    //   `http://localhost:3001/phrases/${changeTheme.checkThemePhrase}`,
-    //   phraseInput
-    // )
     let response = await axios.put(
       `/phrases/${changeTheme.checkThemePhrase}`,
       phraseInput
@@ -78,9 +68,6 @@ const PhraseByTheme = () => {
   }
 
   const deletePhrase = async (e) => {
-    // let response = await axios.delete(
-    //   `http://localhost:3001/phrases/${remove.phrase}`
-    // )
     let response = await axios.delete(`/phrases/${remove.phrase}`)
     apiCall()
   }
