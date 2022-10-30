@@ -58,7 +58,7 @@
 
 ![All Phrases](https://i.postimg.cc/QtyM9Hqp/JW-All-Phrase-screen-Shot.png)
 
-#### View App on: [Heroku](https://www.heroku.com/)
+#### View App on: [Heroku](https://guarded-garden-09346.herokuapp.com/)
 
 ---
 
