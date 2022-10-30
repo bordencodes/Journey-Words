@@ -77,7 +77,6 @@ const VocabLists = () => {
           Update Phrase
         </button>
       </form>
-      {/* DELETE PHRASE button here */}
     </div>
   )
 }

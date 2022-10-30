@@ -18,7 +18,7 @@ const PhraseByTheme = () => {
   })
 
   const [phraseInput, setPhraseInput] = useState('')
-  //add Remove phrase
+
   const [remove, removePhrase] = useState('')
 
   const { id } = useParams()
@@ -71,16 +71,12 @@ const PhraseByTheme = () => {
     })
   }
 
-  //remove function here
-
   const deletePhrase = async (e) => {
     let response = await axios.delete(
       `http://localhost:3001/phrases/${remove.phrase}`
     )
     apiCall()
   }
-
-  //end of remove function
 
   const addNewPhrase = (e) => {
     setAddPhrase({ ...addPhrase, [e.target.id]: e.target.value, theme: id })
@@ -90,13 +86,9 @@ const PhraseByTheme = () => {
     setPhraseInput({ ...phraseInput, [e.target.id]: e.target.value })
   }
 
-  //delete below if necessary
-
   const handlePhraseChange = async (e) => {
     removePhrase({ ...remove, [e.target.id]: e.target.value })
   }
-
-  //delete above if necessary
 
   return (
     <div className="App">
@@ -115,7 +107,6 @@ const PhraseByTheme = () => {
         ))}
       </div>
       <br />
-      {/* ADD PHRASE button here */}
       <form onSubmit={handlePhraseSubmit}>
         <label className="formLabel" htmlFor="phrase">
           Phrase:{' '}
@@ -140,7 +131,6 @@ const PhraseByTheme = () => {
         </button>
       </form>
       <br />
-      {/* remove the above it doesn't work */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="phrase">
           <strong>Enter Phrase Here:</strong>{' '}
@@ -161,7 +151,6 @@ const PhraseByTheme = () => {
           Update
         </button>
       </form>
-      {/* adding REMOVE Form here */}
       <br />
       <label className="formLabel" htmlFor="phrase">
         Select Phrase:{' '}
@@ -179,7 +168,6 @@ const PhraseByTheme = () => {
       <button className="homeBtn" type="submit" onClick={deletePhrase}>
         Remove Phrase
       </button>
-      {/* delete above if does not work */}
     </div>
   )
 }
