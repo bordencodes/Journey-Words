@@ -8,6 +8,7 @@ const PhraseByTheme = () => {
   const [phraseTheme, updateCollections] = useState([])
   //adding ADD phrase
   const [addPhrase, setAddPhrase] = useState({
+    theme: '',
     phrase: '',
     definition: '',
     example: ''
@@ -47,6 +48,7 @@ const PhraseByTheme = () => {
     apiCall()
 
     setAddPhrase({
+      theme: '',
       phrase: '',
       definition: '',
       example: ''
@@ -65,7 +67,7 @@ const PhraseByTheme = () => {
     apiCall()
 
     setPhraseInput({
-      themePhrase: ''
+      phrase: ''
     })
 
     setTheme({
@@ -87,7 +89,7 @@ const PhraseByTheme = () => {
   //adding
 
   const addNewPhrase = (e) => {
-    setAddPhrase({ ...addPhrase, [e.target.id]: e.target.value })
+    setAddPhrase({ ...addPhrase, [e.target.id]: e.target.value, theme: id })
   }
 
   //delete above in necessary
@@ -151,11 +153,7 @@ const PhraseByTheme = () => {
         <label htmlFor="phrase">
           <strong>Enter Phrase Here:</strong>{' '}
         </label>
-        <input
-          id="phrase"
-          onChange={inputChange}
-          value={phraseInput.themePhrase}
-        />
+        <input id="phrase" onChange={inputChange} value={phraseInput.phrase} />
         <select
           value={changeTheme.checkThemePhrase}
           className="updateDropdown"
