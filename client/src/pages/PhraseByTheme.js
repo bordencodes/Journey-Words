@@ -6,14 +6,13 @@ const PhraseByTheme = () => {
   let navigate = useNavigate()
 
   const [phraseTheme, updateCollections] = useState([])
-  //adding ADD phrase
   const [addPhrase, setAddPhrase] = useState({
     theme: '',
     phrase: '',
     definition: '',
     example: ''
   })
-  //delete above const if necessary
+
   const [changeTheme, setTheme] = useState({
     checkThemePhrase: ''
   })
@@ -40,7 +39,6 @@ const PhraseByTheme = () => {
     setTheme({ ...changeTheme, [e.target.id]: e.target.value })
   }
 
-  //handle for addPhrase
   const handlePhraseSubmit = async (e) => {
     e.preventDefault()
     let response = await axios.post(`http://localhost:3001/phrases`, addPhrase)
@@ -54,8 +52,6 @@ const PhraseByTheme = () => {
       example: ''
     })
   }
-
-  //Delete above handle if necessary
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -79,20 +75,16 @@ const PhraseByTheme = () => {
 
   const deletePhrase = async (e) => {
     let response = await axios.delete(
-      `http://localhost:3001/phrases/${remove.deletePhrase}`
+      `http://localhost:3001/phrases/${remove.phrase}`
     )
     apiCall()
   }
 
   //end of remove function
 
-  //adding
-
   const addNewPhrase = (e) => {
     setAddPhrase({ ...addPhrase, [e.target.id]: e.target.value, theme: id })
   }
-
-  //delete above in necessary
 
   const inputChange = (e) => {
     setPhraseInput({ ...phraseInput, [e.target.id]: e.target.value })
@@ -176,7 +168,7 @@ const PhraseByTheme = () => {
       </label>
       <select
         className="deleteDropdown"
-        id="deleteList"
+        id="phrase"
         onChange={handlePhraseChange}
       >
         <option></option>
