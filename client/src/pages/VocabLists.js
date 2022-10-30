@@ -8,7 +8,6 @@ const VocabLists = () => {
   })
   const [input, setInput] = useState('')
 
-  //add delete method here
   const [remove, removePhrase] = useState('')
 
   const apiCall = async () => {
@@ -44,7 +43,6 @@ const VocabLists = () => {
     setInput({ ...input, [e.target.id]: e.target.value })
   }
 
-  //add delete function
   const deletePhrase = async (e) => {
     let response = await axios.delete(
       `http://localhost:3001/phrases/${remove.phrase}`
@@ -52,7 +50,6 @@ const VocabLists = () => {
     apiCall()
   }
 
-  //add handle for delete
   const handlePhraseChange = async (e) => {
     removePhrase({ ...remove, [e.target.id]: e.target.value })
   }
@@ -90,7 +87,6 @@ const VocabLists = () => {
           Update Phrase
         </button>
       </form>
-      {/* added remove button */}
       <br />
       <label className="formLabel" htmlFor="phrase">
         Select Phrase:{' '}
