@@ -52,11 +52,11 @@
 
 ##### Home
 
-![Home Screen](https://postimg.cc/w70WP6kW)
+![Home Screen](https://i.postimg.cc/y8zwDx3z/JW-Home-screen-Shot.png)
 
 ##### Phrases
 
-![All Phrases](https://postimg.cc/ftYs1WpL)
+![All Phrases](https://i.postimg.cc/QtyM9Hqp/JW-All-Phrase-screen-Shot.png)
 
 #### View App on: [Heroku](https://www.heroku.com/)
 
