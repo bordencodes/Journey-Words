@@ -8,14 +8,9 @@ const app = express()
 
 const PORT = process.env.PORT || 3001
 
-// added router line
-const Router = require('./routes/index')
 app.use(cors())
 app.use(express.json())
 app.use(express.static(`${__dirname}/client/build`))
-
-// added line below
-app.use('/api', Router)
 
 app.get('/', (req, res) => {
   res.send('This is root!')
@@ -84,7 +79,7 @@ app.delete('/collections/:id', async (req, res) => {
   res.json(deletedCollection)
 })
 
-// app.use('/api', routes)
+app.use('/api', routes)
 
 app.get('/*', (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`)
